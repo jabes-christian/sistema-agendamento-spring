@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Enviromeny Variables ###
+.env
+.env.local
+.env.*.local
