@@ -7,7 +7,7 @@ CREATE TABLE tb_agendamento(
     status VARCHAR(20) NOT NULL DEFAULT 'AGENDADO',
     usuario VARCHAR(80) NOT NULL,
     criado_em TIMESTAMP NOT NULL DEFAULT NOW(),
-    ataualizado_em TIMESTAMP NOT NULL DEFAULT NOW(),
+    atualizado_em TIMESTAMP NOT NULL DEFAULT NOW(),
     CONSTRAINT ck_status CHECK (status IN ('AGENDADO', 'CANCELADO', 'CONCLUIDO')),
     CONSTRAINT  ck_intervalor CHECK (data_inicio < data_fim)
 )
