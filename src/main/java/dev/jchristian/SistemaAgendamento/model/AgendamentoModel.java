@@ -1,15 +1,15 @@
 package dev.jchristian.SistemaAgendamento.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Table(name = "tb_agendamento")
 public class AgendamentoModel {
 
@@ -24,10 +24,10 @@ public class AgendamentoModel {
     private String descricao;
 
     @Column(name = "data-inicio", nullable = false)
-    private String dataInicio;
+    private LocalDateTime dataInicio;
 
     @Column(name = "data-fim", nullable = false)
-    private String dataFim;
+    private LocalDateTime dataFim;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 120)
@@ -37,8 +37,8 @@ public class AgendamentoModel {
     private String usuario;
 
     @Column(name = "criado_em", nullable = false)
-    private String criadoEm;
+    private LocalDateTime criadoEm;
 
     @Column(name = "atualizado_em", nullable = false)
-    private String atualizadoEm;
+    private LocalDateTime atualizadoEm;
 }

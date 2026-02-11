@@ -12,18 +12,18 @@ CREATE TABLE tb_agendamento(
     CONSTRAINT  ck_intervalor CHECK (data_inicio < data_fim)
 )
 
-CREATE INDEX idx_aG_usuario_inicio_fim
+CREATE INDEX idx_ag_usuario_inicio_fim
  ON tb_agendamento (usuario, data_inicio, data_fim);
 
 CREATE OR REPLACE FUNCTION set_atualizado_em()
-RETURN TRIGGER AS $$
+RETURNS TRIGGER AS $$
 BEGIN
     NEW.atualizado_em := NOW();
     RETURN NEW;
 END;
-$$ LANGUAGE plpgsql
+$$ LANGUAGE plpgsql;
 
-CREATE TRIGGER trg_atualizado_em
+CREATE TRIGGER trg_set_atualizado_em
 BEFORE UPDATE ON tb_agendamento
 FOR EACH ROW
 EXECUTE FUNCTION set_atualizado_em();
