@@ -2,6 +2,7 @@ package dev.jchristian.SistemaAgendamento.mapper;
 
 import dev.jchristian.SistemaAgendamento.dto.AgendamentoCreateRequest;
 import dev.jchristian.SistemaAgendamento.dto.AgendamentoResponse;
+import dev.jchristian.SistemaAgendamento.dto.AgendamentoUpdateRequest;
 import dev.jchristian.SistemaAgendamento.model.AgendamentoModel;
 import dev.jchristian.SistemaAgendamento.model.StatusAgendamento;
 
@@ -22,7 +23,7 @@ public class AgendamentoMapper {
                 .build();
     }
 
-    public static void merge(AgendamentoModel entity, AgendamentoCreateRequest req) {
+    public static void merge(AgendamentoModel entity, AgendamentoUpdateRequest req) {
         if (req.titulo() != null) {
             entity.setTitulo(req.titulo());
         }
