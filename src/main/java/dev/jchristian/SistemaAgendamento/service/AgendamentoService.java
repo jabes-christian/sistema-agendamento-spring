@@ -73,13 +73,13 @@ public class AgendamentoService {
     }
 
     private void validarIntervalo(LocalDateTime inicio, LocalDateTime fim) {
-        if (inicio == null || fim == null || inicio.isBefore(fim)) {
-            throw new IllegalArgumentException("Intervalo inálido: dataInicio dev ser anteriro a dataFim");
+        if (inicio == null || fim == null || !inicio.isBefore(fim)) {
+            throw new IllegalArgumentException("Intervalo inválido: dataInicio deve ser anterior a dataFim");
         }
     }
 
     private void checarConflito(String usuario, LocalDateTime inicio, LocalDateTime fim, Long id) {
-        boolean conflito = repository.existsConflito(usuario, inicio, fim, id);
+        boolean conflito = repository.existsConflito(usuario, StatusAgendamento.AGENDADO, inicio, fim, id);
         if (conflito) {
             throw new IllegalArgumentException("Conflito na agenda: já existe agendamento nesse período");
         }
