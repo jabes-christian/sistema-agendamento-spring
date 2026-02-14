@@ -10,8 +10,8 @@ Boot](https://img.shields.io/badge/SpringBoot-3.x-brightgreen)
 ## 📌 Sobre o Projeto
 
 O mini **Sistema de Agendamento** é uma API REST desenvolvida com **Spring
-Boot**, responsável pelo gerenciamento de agendamentos, permitindo
-criar, atualizar, listar e remover registros de forma estruturada.
+Boot**, usando uma arquitetura tradicional em camadas, responsável pelo gerenciamento de agendamentos, permitindo
+criar, atualizar, listar e cancelar registros de forma estruturada.
 
 O projeto foi desenvolvido com foco em boas práticas de desenvolvimento
 backend, arquitetura escalável e preparação para ambientes produtivos
